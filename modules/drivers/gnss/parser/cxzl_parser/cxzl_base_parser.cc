@@ -290,7 +290,7 @@ bool CxzlBaseParser::PrepareMessage() {
   std::vector<std::string> fields;
   std::string checknum = input_str.substr(input_str.find('*')+1, input_str.find(0x0D));
 
-  std::stringstream ss(input_str.substr(0, input_str.rfind('*')));
+  std::stringstream ss(input_str.substr(0, input_str.find('*')));
   for (std::string field; std::getline(ss, field, ',');) {
     fields.push_back(field);
   }
